@@ -2,16 +2,26 @@
 
 {% block content %}
 
-<h1 class= detailsTitle>Comic Details</h1>
-<div>{{details.name}}</div>
-<img class="cover"src="{{details.image.original_url}}" alt="">
-{% for character in details.character_credits %}
-    <div>{{character.name}}</div>
-{% endfor %}
-{% for team_member in details.team_credits %}
-    <div>{{team_member.name}}</div>
-{% endfor %}
-{% for location in details.location_credits %}
-    <div>{{location.name}}</div>
-{% endfor %}
+<div class="detailsContainer">
+    <div class="imageContainer"><img class="cover"src="{{details.image.original_url}}" alt="not found"></div>
+    <div class= "details">
+        <h1 class="comicName">{{details.name}}</h1>
+        <h2 class="characters">Characters</h2>
+            {% for character in details.character_credits %}
+                <div>{{character.name}}</div>
+            {% endfor %}
+        <h2 class="team">Team</h2>
+            {% for team_member in details.team_credits %}
+                <div>{{team_member.name}}</div>
+            {% endfor %}
+        <h2 class="comicloc">Locations</h2>
+            {% for location in details.location_credits %}
+                <div>{{location.name}}</div>
+            {% endfor %}
+    </div>
+</div>
+<!--BOOTSTRAP 4.4-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--CUSTOM CSS-->
+<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 {% endblock %}
