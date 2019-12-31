@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1 class= detailsTitle>Comic Details</h1>
+<div>{{details.name}}</div>
+<img class="cover"src="{{details.image.original_url}}" alt="">
+{% for character in details.character_credits %}
+    <div>{{character.name}}</div>
+{% endfor %}
+{% for team_member in details.team_credits %}
+    <div>{{team_member.name}}</div>
+{% endfor %}
+{% for location in details.location_credits %}
+    <div>{{location.name}}</div>
+{% endfor %}
+{% endblock %}

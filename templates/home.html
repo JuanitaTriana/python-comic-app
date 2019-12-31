@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    <div class=comic-list>
+        {% for item in (comics.get('results')) %}
+        <a class="list-element" href="/comicDetails/{{item.api_detail_url[41:-1]}}" method="POST">
+            <img class="comic-cover" src="{{item.image.original_url }}" alt="no image found"></img>      
+            <div class="name">name: {{item.name}} {{item.issue_number}}</div> 
+            <div>added date: {{item.date_added[:10]}}</div> 
+        </a> 
+        {% endfor %}
+    </div>
+</div>
+   
+{% endblock %}
