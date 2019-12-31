@@ -7,14 +7,23 @@
     <div class= "details">
         <h1 class="comicName">{{details.name}}</h1>
         <h2 class="characters">Characters</h2>
+            {% if details.character_credits == [] %}
+                <div class="none">nothing to show here!</div>
+            {% endif %}
             {% for character in details.character_credits %}
                 <div>{{character.name}}</div>
             {% endfor %}
         <h2 class="team">Team</h2>
+            {% if details.team_credits == [] %}
+                <div class="none">nothing to show here!</div>
+            {% endif %}
             {% for team_member in details.team_credits %}
                 <div>{{team_member.name}}</div>
             {% endfor %}
-        <h2 class="comicloc">Locations</h2>
+            <h2 class="comicloc">Locations</h2>
+            {% if details.location_credits == [] %}
+                <div class="none">nothing to show here!</div>
+            {% endif %}
             {% for location in details.location_credits %}
                 <div>{{location.name}}</div>
             {% endfor %}
