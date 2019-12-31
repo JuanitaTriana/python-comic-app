@@ -2,7 +2,15 @@
 a python comic page using flask and an API from ComicVine 
 
 # Requirements
-Python >= 3
+* Python > version 3
+* Pip
+  
+* Flask
+  `pip install Flask`
+* Requests
+  `pip install requests`
+
+
 
 # Steps:
 1. Open a terminal in the folder root 
